@@ -66,12 +66,24 @@
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
   .hero::before{
     content:"";position:absolute;inset:0;
-    background:url('hero.jpg') center 18%/cover no-repeat;
+    background-color:var(--schwarz);
+    background-image:url('hero.jpg');
+    background-repeat:no-repeat;
+    background-position:right -2vw top 12%;
+    background-size:auto 112%;
     filter:grayscale(1) contrast(1.05);
   }
   .hero::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(11,11,11,.25) 0%,rgba(11,11,11,.45) 55%,rgba(11,11,11,.94) 100%);
+    background:
+      linear-gradient(90deg,rgba(11,11,11,.96) 6%,rgba(11,11,11,.55) 36%,rgba(11,11,11,0) 64%),
+      linear-gradient(180deg,rgba(11,11,11,0) 55%,rgba(11,11,11,.88) 100%);
+  }
+  @media (max-width:920px){
+    .hero::before{background-position:right -16vw top 10%;background-size:auto 105%}
+    .hero::after{background:
+      linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.35) 45%,rgba(11,11,11,.1) 80%),
+      linear-gradient(180deg,rgba(11,11,11,.1) 40%,rgba(11,11,11,.92) 100%)}
   }
   .hero .inhalt{position:relative;z-index:2;padding:0 0 9vh;width:100%}
   .hero h1{
@@ -225,7 +237,7 @@
       <h1 class="display">Sichtbarkeit<span class="zeile2">ist kein Zufall.</span></h1>
       <div class="sub">
         <span class="serif">Foto. Video. Content.</span>
-        <p>Für Unternehmen, die nicht übersehen werden wollen. Konzipiert, produziert und geliefert von Schuster Studio – Rhein-Neckar &amp; bundesweit.</p>
+        <p>Für Unternehmen, die gesehen werden wollen. Konzipiert, produziert und geliefert von Schuster Studio – Rhein-Neckar &amp; bundesweit.</p>
       </div>
       <div class="cta-row">
         <a class="btn" href="#kontakt">Unverbindlich anfragen</a>
@@ -256,17 +268,17 @@
     <div class="wrap">
       <div class="kopf">
         <span class="label">Warum professioneller Content</span>
-        <h2 class="display">Ihre Kunden googeln Sie. Die Frage ist nur, was sie finden.</h2>
-        <p>Bevor jemand anruft, ein Angebot anfordert oder sich bewirbt, hat er Ihre Website, Ihr LinkedIn-Profil und Ihre Bilder gesehen. Dieser erste Eindruck entsteht in Sekunden – und er entscheidet, ob es einen zweiten gibt.</p>
+        <h2 class="display">Ihre Kunden googeln Sie. Geben wir ihnen etwas zu sehen.</h2>
+        <p>Bevor jemand anruft, ein Angebot anfordert oder sich bewirbt, hat er Ihre Website, Ihr LinkedIn-Profil und Ihre Bilder gesehen. Dieser erste Eindruck entsteht in Sekunden – gestalten wir ihn so überzeugend wie Ihre Arbeit.</p>
       </div>
       <div class="argumente">
         <div class="arg">
           <h3>Vertrauen ist visuell</h3>
-          <p><strong>Menschen kaufen von Menschen.</strong> Echte, hochwertige Porträts Ihres Teams schaffen Nähe und Glaubwürdigkeit, bevor das erste Gespräch stattfindet. Stockfotos erkennt jeder sofort – und niemand vertraut ihnen.</p>
+          <p><strong>Menschen kaufen von Menschen.</strong> Hochwertige, authentische Porträts geben Ihrem Unternehmen ein Gesicht und schaffen Nähe und Glaubwürdigkeit – noch bevor das erste Gespräch stattfindet.</p>
         </div>
         <div class="arg">
           <h3>Marke entsteht durch Konsistenz</h3>
-          <p>Eine durchgängige Bildsprache über Website, Social Media, Presse und Print macht aus einem Unternehmen eine Marke. <strong>Wer überall anders aussieht, bleibt nirgends im Gedächtnis.</strong></p>
+          <p>Eine durchgängige Bildsprache über Website, Social Media, Presse und Print macht aus einem Unternehmen eine Marke. <strong>Wiedererkennbarkeit ist der direkte Weg ins Gedächtnis Ihrer Kunden.</strong></p>
         </div>
         <div class="arg">
           <h3>Ein Shooting, viele Kanäle</h3>
@@ -274,11 +286,11 @@
         </div>
         <div class="arg">
           <h3>Recruiting beginnt beim Bild</h3>
-          <p>Fachkräfte prüfen Arbeitgeber online, bevor sie sich bewerben. Authentische Einblicke in Team und Arbeitsumfeld sind <strong>das stärkste Argument, das keine Stellenanzeige ersetzen kann.</strong></p>
+          <p>Fachkräfte lernen Arbeitgeber online kennen, bevor sie sich bewerben. Authentische Einblicke in Team und Arbeitsumfeld sind <strong>Ihr stärkstes Argument im Wettbewerb um die besten Köpfe.</strong></p>
         </div>
         <div class="arg">
           <h3>Bewegtbild wird erwartet</h3>
-          <p>Video ist kein Nice-to-have mehr: Es transportiert in 60 Sekunden, wofür Text drei Absätze braucht – und wird auf allen Plattformen bevorzugt ausgespielt. <strong>Wer kein Bewegtbild hat, überlässt die Bühne anderen.</strong></p>
+          <p>Video transportiert in 60 Sekunden, wofür Text drei Absätze braucht – und wird auf allen Plattformen bevorzugt ausgespielt. <strong>Mit Bewegtbild gehört die Bühne Ihnen.</strong></p>
         </div>
       </div>
     </div>
@@ -323,7 +335,7 @@
           <div class="bild"><img src="video-kamera.jpg" alt="Contentproduktion hinter den Kulissen" loading="lazy"></div>
           <div class="text">
             <h3>Content</h3>
-            <p>Regelmäßiger, hochwertiger Content für Ihre Kanäle – ohne dass Sie sich darum kümmern müssen. Geplant in Paketen, geliefert einsatzbereit für Social Media und Web.</p>
+            <p>Regelmäßiger, hochwertiger Content für Ihre Kanäle – während Sie sich auf Ihr Kerngeschäft konzentrieren. Geplant in Paketen, geliefert einsatzbereit für Social Media und Web.</p>
             <ul>
               <li>Social-Media-Content-Pakete</li>
               <li>Recruiting-Content</li>
@@ -368,7 +380,7 @@
       <div class="schritte">
         <div class="schritt">
           <h3>Briefing &amp; Konzept</h3>
-          <p>Wir klären Ziel, Einsatzzweck und Umfang – telefonisch oder vor Ort. Sie erhalten ein klares Festpreisangebot inklusive Nutzungsrechten. Keine versteckten Kosten.</p>
+          <p>Wir klären Ziel, Einsatzzweck und Umfang – telefonisch oder vor Ort. Sie erhalten ein klares Festpreisangebot inklusive Nutzungsrechten – transparent kalkuliert vom ersten Tag an.</p>
         </div>
         <div class="schritt">
           <h3>Produktion</h3>
@@ -392,7 +404,7 @@
         <p>Fotograf und Content-Produzent aus Frankenthal. Ich habe Eröffnungen für <strong>Porsche</strong> dokumentiert, das Jubiläum der <strong>Mercedes-Benz Bank</strong> begleitet, Werbeaufnahmen für eine <strong>ProSieben-Gründershow</strong> produziert und Profis der <strong>Adler Mannheim</strong> vor der Kamera gehabt.</p>
         <p>Was alle Projekte verbindet: <strong>Verlässlichkeit, Tempo und ein Auge für den Moment</strong>, der eine Marke ausmacht. Ich plane selbstständig, arbeite mich schnell in Ihr Unternehmen ein und liefere, was vereinbart ist – pünktlich.</p>
         <!-- TIPP: Hier kannst du noch 1–2 persönliche Sätze ergänzen (Jahre Erfahrung, Werdegang, Haltung). -->
-        <span class="serif">„Gute Bilder sind kein Kostenpunkt. Sie sind ein Verkäufer, der nie schläft."</span>
+        <span class="serif">„Gute Bilder sind ein Verkäufer, der rund um die Uhr für Sie arbeitet."</span>
       </div>
     </div>
   </section>
