@@ -66,24 +66,17 @@
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
   .hero::before{
     content:"";position:absolute;inset:0;
-    background-color:var(--schwarz);
-    background-image:url('hero.jpg');
-    background-repeat:no-repeat;
-    background-position:right -2vw top 12%;
-    background-size:auto 112%;
+    background:url('hero.jpg') 64% 20%/cover no-repeat;
     filter:grayscale(1) contrast(1.05);
   }
   .hero::after{
     content:"";position:absolute;inset:0;
     background:
-      linear-gradient(90deg,rgba(11,11,11,.96) 6%,rgba(11,11,11,.55) 36%,rgba(11,11,11,0) 64%),
-      linear-gradient(180deg,rgba(11,11,11,0) 55%,rgba(11,11,11,.88) 100%);
+      linear-gradient(90deg,rgba(11,11,11,.5) 0%,rgba(11,11,11,.15) 38%,rgba(11,11,11,0) 62%),
+      linear-gradient(180deg,rgba(11,11,11,.22) 0%,rgba(11,11,11,.42) 55%,rgba(11,11,11,.93) 100%);
   }
   @media (max-width:920px){
-    .hero::before{background-position:right -16vw top 10%;background-size:auto 105%}
-    .hero::after{background:
-      linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.35) 45%,rgba(11,11,11,.1) 80%),
-      linear-gradient(180deg,rgba(11,11,11,.1) 40%,rgba(11,11,11,.92) 100%)}
+    .hero::before{background-position:68% 15%}
   }
   .hero .inhalt{position:relative;z-index:2;padding:0 0 9vh;width:100%}
   .hero h1{
@@ -113,6 +106,11 @@
   .kopf{margin-bottom:56px;max-width:760px}
   .kopf h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:600;margin-top:14px}
   .kopf p{color:var(--grau);margin-top:18px;font-weight:300;font-size:1.05rem}
+  .leitsatz{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+    font-size:clamp(1.5rem,3.2vw,2.2rem);color:var(--weiss);
+    margin-top:30px;line-height:1.3;
+  }
 
   /* ── Verkaufsargumente ──────────────── */
   .argumente{counter-reset:arg}
@@ -270,6 +268,7 @@
         <span class="label">Warum professioneller Content</span>
         <h2 class="display">Ihre Kunden googeln Sie. Geben wir ihnen etwas zu sehen.</h2>
         <p>Bevor jemand anruft, ein Angebot anfordert oder sich bewirbt, hat er Ihre Website, Ihr LinkedIn-Profil und Ihre Bilder gesehen. Dieser erste Eindruck entsteht in Sekunden – gestalten wir ihn so überzeugend wie Ihre Arbeit.</p>
+        <p class="leitsatz">„Es gibt keine zweite Chance für einen ersten Eindruck."</p>
       </div>
       <div class="argumente">
         <div class="arg">
@@ -376,19 +375,20 @@
       <div class="kopf">
         <span class="label">Zusammenarbeit</span>
         <h2 class="display">Unkompliziert. Verlässlich. Termingerecht.</h2>
+        <p>Ein Ansprechpartner für Foto, Video und Content. Planbare Kosten, eingehaltene Termine und Ideen, die zu Ihrer Marke passen – damit Zusammenarbeit sich so anfühlt, wie sie sein soll: einfach.</p>
       </div>
       <div class="schritte">
         <div class="schritt">
-          <h3>Briefing &amp; Konzept</h3>
-          <p>Wir klären Ziel, Einsatzzweck und Umfang – telefonisch oder vor Ort. Sie erhalten ein klares Festpreisangebot inklusive Nutzungsrechten – transparent kalkuliert vom ersten Tag an.</p>
+          <h3>Idee, Konzept &amp; Angebot</h3>
+          <p>Wir klären Ziel, Einsatzzweck und Umfang – telefonisch oder bei Ihnen vor Ort. Auf Wunsch entwickle ich Ideen und ein Konzept, das zu Ihrer Marke passt. Sie erhalten ein klares Festpreisangebot, bei dem Sie die Nutzungsrechte passgenau als Bausteine wählen – Social Media, Print, Presse, zeitlich begrenzt oder Total Buy-out. <strong style="color:var(--weiss);font-weight:500">So zahlen Sie nur, was Sie wirklich brauchen.</strong></p>
         </div>
         <div class="schritt">
           <h3>Produktion</h3>
-          <p>Ich komme mit komplettem Foto- und Video-Equipment zu Ihnen oder wir produzieren im Studio. Effizient geplant, damit Ihr Team so wenig Zeit wie möglich investiert.</p>
+          <p>Ich produziere bei Ihnen vor Ort oder im Studio – mit genau dem Equipment, das Ihr Projekt braucht. Abläufe plane ich so effizient, dass Ihr Team nur so viel Zeit investiert wie nötig und der Betrieb ganz normal weiterläuft. <strong style="color:var(--weiss);font-weight:500">Zugesagte Termine halte ich. Punkt.</strong></p>
         </div>
         <div class="schritt">
           <h3>Auswahl &amp; Lieferung</h3>
-          <p>Sie wählen bequem aus einer Online-Galerie. Die finalen Bilder und Videos erhalten Sie bearbeitet, in allen benötigten Formaten – web-, social- und druckfertig.</p>
+          <p>Sie wählen bequem aus einer Online-Galerie. Die finalen Bilder und Videos erhalten Sie bearbeitet und in allen vereinbarten Formaten – einsatzbereit für Web, Social Media oder Druck. <strong style="color:var(--weiss);font-weight:500">Schnelle Lieferung ist Standard – erste Highlights auf Wunsch noch am selben Tag.</strong></p>
         </div>
       </div>
     </div>
@@ -422,8 +422,7 @@
         <a class="gross" href="mailto:info@schusterstudio.de">info@schusterstudio.de</a>
         <div style="height:24px"></div>
         <span class="label">Telefon</span>
-        <!-- TELEFONNUMMER ERSETZEN -->
-        <a class="gross" href="tel:+490000000000">+49&nbsp;000&nbsp;0000000</a>
+        <a class="gross" href="tel:+491793245973">0179&nbsp;3245973</a>
         <br>
         <a class="btn" href="mailto:info@schusterstudio.de?subject=Projektanfrage%20Schuster%20Studio">Projekt anfragen</a>
       </div>
