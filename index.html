@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schuster Studio – Fotografie für Unternehmen | Frankenthal &amp; Rhein-Neckar</title>
+<meta name="description" content="Businessporträts, Produkt- und Imagefotografie, Event- und Corporate-Fotografie in Frankenthal und der Metropolregion Rhein-Neckar. Schuster Studio – Sandy Schuster.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F3;
+    --ink:#191B1A;
+    --graphite:#4C504E;
+    --line:#D8DAD6;
+    --focus:#D8331F;   /* AF-Punkt / REC-Rot, sparsam einsetzen */
+    --card:#FFFFFF;
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:'Archivo',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:17px;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* ── Header ───────────────────────────── */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,245,243,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem;text-decoration:none;display:flex;align-items:center;gap:.55em}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--focus);flex:none}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:.88rem;color:var(--graphite)}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:700;font-size:.88rem;
+    padding:.72em 1.5em;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+    transition:background .15s,color .15s;
+  }
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+  /* ── Hero mit AF-Rahmen ───────────────── */
+  .hero{padding:96px 0 80px;position:relative}
+  .af-frame{
+    position:relative;
+    padding:56px 48px;
+  }
+  .af-frame::before,.af-frame::after,
+  .af-frame .c3,.af-frame .c4{
+    content:"";position:absolute;width:34px;height:34px;border:2.5px solid var(--ink);
+  }
+  .af-frame::before{top:0;left:0;border-right:none;border-bottom:none}
+  .af-frame::after{top:0;right:0;border-left:none;border-bottom:none}
+  .af-frame .c3{bottom:0;left:0;border-right:none;border-top:none}
+  .af-frame .c4{bottom:0;right:0;border-left:none;border-top:none}
+  .hero .eyebrow{display:flex;align-items:center;gap:.7em;margin-bottom:22px}
+  .hero .eyebrow .rec{width:8px;height:8px;border-radius:50%;background:var(--focus);animation:blink 2.4s steps(1) infinite}
+  @keyframes blink{0%,70%{opacity:1}71%,100%{opacity:.25}}
+  h1{
+    font-weight:800;letter-spacing:-.02em;line-height:1.04;
+    font-size:clamp(2.4rem,6vw,4.4rem);max-width:14ch;
+  }
+  h1 .scharf{color:var(--focus)}
+  .hero p.sub{margin-top:26px;max-width:54ch;color:var(--graphite);font-size:1.1rem}
+  .hero .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+  /* ── Sektionen ────────────────────────── */
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+  h2{font-weight:800;letter-spacing:-.015em;font-size:clamp(1.7rem,3.4vw,2.5rem)}
+
+  /* Leistungen */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+  .ph{
+    aspect-ratio:4/5;position:relative;overflow:hidden;
+    background:
+      linear-gradient(135deg,#C9CCC8 0%,#AEB2AE 48%,#8F948F 100%);
+  }
+  .ph::after{
+    content:"";position:absolute;inset:14px;border:1.5px dashed rgba(25,27,26,.4);
+  }
+  .ph span{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:rgba(25,27,26,.65);
+  }
+  .card .body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card h3{font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
+  .card p{font-size:.95rem;color:var(--graphite)}
+  .card .exif{margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+
+  /* Ablauf */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{border-top:2.5px solid var(--ink);padding-top:18px}
+  .step h3{font-size:1.1rem;font-weight:700;display:flex;gap:.6em;align-items:baseline}
+  .step h3::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--focus);font-weight:500;
+  }
+  .step p{font-size:.95rem;color:var(--graphite);margin-top:8px}
+
+  /* Über */
+  .about{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:56px;align-items:start}
+  .about .ph{aspect-ratio:3/4}
+  .about h2{margin-bottom:18px}
+  .about p{color:var(--graphite);margin-bottom:14px;max-width:60ch}
+
+  /* Kontakt */
+  .kontakt{background:var(--ink);color:var(--paper);border-top:none}
+  .kontakt h2{color:var(--paper);max-width:18ch}
+  .kontakt .mono{color:#A7ABA8}
+  .kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .kontakt a.big{
+    display:block;font-size:clamp(1.2rem,2.6vw,1.7rem);font-weight:700;text-decoration:none;
+    margin-top:8px;border-bottom:2px solid var(--focus);width:fit-content;padding-bottom:2px;
+  }
+  .kontakt a.big:hover{color:#fff;border-color:#fff}
+  .kontakt .btn{border-color:var(--paper);background:var(--paper);color:var(--ink);margin-top:28px}
+  .kontakt .btn:hover{background:transparent;color:var(--paper)}
+
+  footer{background:var(--ink);color:#A7ABA8;padding:28px 0;border-top:1px solid #2E302F}
+  .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
+  .foot a{color:#A7ABA8;text-decoration:none}
+  .foot a:hover{color:#fff}
+
+  @media (max-width:860px){
+    .cards,.steps{grid-template-columns:1fr}
+    .about{grid-template-columns:1fr}
+    .kontakt-grid{grid-template-columns:1fr}
+    .nav-links a:not(.btn){display:none}
+    .af-frame{padding:36px 22px}
+    .hero{padding:64px 0 56px}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>Schuster&nbsp;Studio</a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber">Über</a>
+      <a class="btn" href="#kontakt">Projekt anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="af-frame">
+        <span class="c3" aria-hidden="true"></span><span class="c4" aria-hidden="true"></span>
+        <div class="eyebrow">
+          <span class="rec" aria-hidden="true"></span>
+          <span class="mono">Fotografie für Unternehmen · Frankenthal &amp; Rhein-Neckar</span>
+        </div>
+        <h1>Bilder, die Ihr Unternehmen <span class="scharf">scharf&nbsp;stellen.</span></h1>
+        <p class="sub">Businessporträts, Produkt- und Imagefotografie, Events – professionell geplant, verlässlich geliefert. Schuster Studio ist Ihre Ansprechpartnerin für Unternehmensfotografie in der Metropolregion Rhein-Neckar.</p>
+        <div class="cta-row">
+          <a class="btn" href="#kontakt">Unverbindlich anfragen</a>
+          <a class="btn ghost" href="#leistungen">Leistungen ansehen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEISTUNGEN ───────────────────────────────────── -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Leistungen</h2>
+        <span class="mono">Drei Schwerpunkte · ein Studio</span>
+      </div>
+      <div class="cards">
+
+        <article class="card">
+          <!-- BILD ERSETZEN: hier ein Businessporträt einfügen, z. B. <img src="bilder/portraits.jpg" alt="Businessporträt"> statt des div.ph -->
+          <div class="ph"><span>Bild: Businessporträt</span></div>
+          <div class="body">
+            <h3>Businessporträts &amp; Headshots</h3>
+            <p>Einheitliche Mitarbeiterporträts für Website, LinkedIn und Presse – im Studio oder direkt bei Ihnen im Unternehmen. Auch für ganze Teams an einem Tag.</p>
+            <span class="exif mono">85&nbsp;mm · f/2.0 · Studio &amp; on location</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- BILD ERSETZEN: Produkt- oder Imagefoto -->
+          <div class="ph"><span>Bild: Produktfoto</span></div>
+          <div class="body">
+            <h3>Produkt- &amp; Imagefotografie</h3>
+            <p>Produkte, Räume und Arbeitswelten, die Ihre Marke zeigen, wie sie ist: hochwertig, konsistent und einsatzbereit für Shop, Katalog und Kampagne.</p>
+            <span class="exif mono">50&nbsp;mm · f/8 · Lichtsetup nach Maß</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- BILD ERSETZEN: Eventfoto -->
+          <div class="ph"><span>Bild: Corporate Event</span></div>
+          <div class="body">
+            <h3>Events &amp; Corporate</h3>
+            <p>Firmenevents, Messen, Tagungen und Jubiläen – dokumentiert mit Blick für Momente, die Sie intern und extern gerne zeigen. Lieferung auf Wunsch noch am selben Tag.</p>
+            <span class="exif mono">35&nbsp;mm · f/2.8 · Reportagestil</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABLAUF ───────────────────────────────────────── -->
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>So arbeiten wir zusammen</h2>
+        <span class="mono">Vom Briefing bis zur Lieferung</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Briefing &amp; Angebot</h3>
+          <p>Wir besprechen Ziel, Einsatzzweck und Umfang – telefonisch oder vor Ort. Sie erhalten ein klares Festpreisangebot inklusive Nutzungsrechten.</p>
+        </div>
+        <div class="step">
+          <h3>Shooting</h3>
+          <p>Ich komme mit komplettem Equipment zu Ihnen oder wir arbeiten im Studio. Effizient geplant, damit Ihr Team so wenig Zeit wie möglich investiert.</p>
+        </div>
+        <div class="step">
+          <h3>Auswahl &amp; Lieferung</h3>
+          <p>Sie wählen aus einer Online-Galerie. Die finalen Bilder erhalten Sie retuschiert, in allen benötigten Formaten – web- und druckfertig.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ÜBER ─────────────────────────────────────────── -->
+  <section id="ueber">
+    <div class="wrap about">
+      <!-- BILD ERSETZEN: Porträt von Sandy -->
+      <div class="ph"><span>Bild: Sandy Schuster</span></div>
+      <div>
+        <span class="mono">Hinter der Kamera</span>
+        <h2 style="margin-top:10px">Sandy Schuster</h2>
+        <p>Ich bin Fotografin aus Frankenthal mit langjähriger Erfahrung darin, Menschen vor der Kamera in kürzester Zeit zu entspannen – eine Fähigkeit, die bei Businessporträts den Unterschied macht.</p>
+        <p>Unternehmen in der Region vertrauen mir, weil ich zuverlässig plane, selbstständig arbeite und Bilder liefere, die nicht nur gut aussehen, sondern ein klares Ziel erfüllen: Ihre Marke sichtbar machen.</p>
+        <p><!-- TIPP: Hier 2–3 Sätze zu deinem Werdegang ergänzen (Jahre Erfahrung, besondere Kunden, Ausbildung). --></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KONTAKT ──────────────────────────────────────── -->
+  <section id="kontakt" class="kontakt">
+    <div class="wrap kontakt-grid">
+      <div>
+        <span class="mono">Kontakt</span>
+        <h2 style="margin-top:10px">Erzählen Sie mir von Ihrem Projekt.</h2>
+      </div>
+      <div>
+        <span class="mono">E-Mail</span>
+        <a class="big" href="mailto:info@schusterstudio.de">info@schusterstudio.de</a>
+        <div style="height:22px"></div>
+        <span class="mono">Telefon</span>
+        <!-- TELEFONNUMMER ERSETZEN -->
+        <a class="big" href="tel:+490000000000">+49&nbsp;000&nbsp;0000000</a>
+        <br>
+        <a class="btn" href="mailto:info@schusterstudio.de?subject=Projektanfrage%20Schuster%20Studio">Anfrage senden</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Schuster Studio · Frankenthal</span>
+    <span>
+      <!-- WICHTIG: Impressum & Datenschutz sind in Deutschland Pflicht – eigene Seiten anlegen und hier verlinken -->
+      <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
